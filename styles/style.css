@@ -1,8 +1,82 @@
 body {
     background-color: darkblue;
     font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
 }
 
-h1, h2, p {
+
+h1, h2, h3, h4, p {
     color: aliceblue;
+}
+
+button:hover {
+    background-color: rgb(68, 255, 255);
+    color:black;
+}
+
+.button {
+    background-color:rgb(86, 86, 86); 
+    border-style: solid;
+    border-color: aliceblue;
+    color: rgb(255, 255, 255);
+    padding:5 5px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 4px;
+  }
+
+.button2 {
+    background-color: rgb(40, 40, 40);
+    border-style: solid;
+    border-color: aliceblue;
+    color: rgb(255, 255, 255);
+    padding:5 5px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 4px;
+}
+
+.button3 {
+    background-color: rgb(115, 115, 115);
+    border-style: solid;
+    border-color: aliceblue;
+    color: rgb(255, 255, 255);
+    padding:5 5px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 4px;
+}
+
+
+#current_theme{
+    color: aliceblue;
+}
+
+.header_style{
+    text-align: center;
+    color:rgb(161, 233, 255);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+div {
+    border-color: rgb(161, 233, 255);
+    border-style: dashed;
+    border-width: 3px;
+    padding: 10px;
+  }
+
+#selfie {
+    display: block;
+    margin: auto;
+    width: 350px;
+  object-fit: contain;
+    clip-path: circle(30%);
+    shape-outside: circle(35%);
+
 }
