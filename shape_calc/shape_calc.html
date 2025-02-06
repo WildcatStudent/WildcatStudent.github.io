@@ -1,1 +1,89 @@
-<h1>Welcome to my Shape Calc</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Triangle and Pyramid Calculator</title>
+    </head>
+    <body>
+        <h1>Triangle and Pyramid Calculator!</h1>
+        <hr>
+
+        <p>Welcome! Use this website to calculate the perimeters and areas of triangles, along with the volume of a pyramid.</p>
+        <p>Just insert the needed variables and let the website do the rest!</p>
+        <hr>
+        <br>
+        <h1>Triangle Perimeter Calculator</h1>
+        <h4>[P = a + b + c]</h4>
+        <p><label for='side_a'>Side A: </label><input type='text' id='side_a'></p>
+		<p><label for='side_b'>Side B: </label><input type='text' id='side_b'></p>	
+        <p><label for='side_c'>Side C: </label><input type='text' id='side_c'></p>	
+        <button onclick='triPerimeter()'>Get perimeter</button>
+        <p>Result: <span id='triPerimeterResult'></span></p>
+
+        <img src="TriPeri.png" alt="Figure of variables needed for triangle perimeter.">
+        <hr>
+        <h1>Triangle Area Calculator</h1>
+        <h4>[A = b * h * 1/2]</h4>
+        <p><label for = 'base'>Base: </label><input type='text' id='base'></p>
+        <p><label for = 'height'>Height: </label><input type='text' id='height'></p>
+        <button onclick='triArea()'>Get Area</button>
+        <p>Result: <span id='triAreaResult'></span></p>
+
+        <img src="TriArea.png" alt="Figure of variables needed for triangle area.">
+        <hr>
+        <h1>Pyramid Volume Calculator</h1>
+        <h4>[V = (l * w * h) / 3]</h4>
+        <p><label for = 'baseLength'>Base Length: </label><input type="text" id="baseLength"></p>
+        <p><label for = 'baseWidth'>Base Width: </label><input type="text" id="baseWidth"></p>
+        <p><label for = 'baseHeight'>Base Height: </label><input type="text" id="baseHeight"></p>
+
+        <button onclick='pyrVolume()'>Get Volume</button>
+        <p>Result: <span id='pyrVolumeResult'></span></p>
+
+        <img src="PyrVolume.png" alt="Figure of variables needed for pyramid volume.">
+        <hr>
+        <script>
+            //Perimeter Calculations:
+            function triPerimeter(){
+                let side_a = document.getElementById('side_a').value;
+                let side_b = document.getElementById('side_b').value;
+                let side_c = document.getElementById('side_c').value;
+
+                let result = Number(side_a) + Number(side_b) + Number(side_c);
+                document.getElementById('triPerimeterResult').innerHTML = result;
+            }
+
+            //a: 4, b: 6, c: 3
+            //Online Perimeter Calculator: 13
+            //My Website: 13
+
+            //Area Calculations:
+            function triArea(){
+                let base = document.getElementById('base').value;
+                let height = document.getElementById('height').value;
+
+                let result = (Number(base) * Number(height)) * 0.5;
+                document.getElementById('triAreaResult').innerHTML = result;
+            }
+            
+            //base: 3, height: 6
+            //Online Area Calculator: 9
+            //My Website: 9
+
+            //Volume Calculations:
+            function pyrVolume(){
+                let baseLength = document.getElementById('baseLength').value;
+                let baseWidth = document.getElementById('baseWidth').value;
+                let baseHeight = document.getElementById('baseHeight').value;
+
+                let result = (Number(baseLength) * Number(baseWidth) * Number(baseHeight)) / 3;
+                document.getElementById('pyrVolumeResult').innerHTML = result;
+            }
+
+            //base: 3, height: 9, width: 6
+            //Online Area Calculator: 54
+            //My Website: 54
+
+        </script>
+
+    </body>
+</html>

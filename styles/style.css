@@ -80,3 +80,8 @@ div {
     shape-outside: circle(35%);
 
 }
+
+#shape_calc{
+    color: rgb(0, 255, 247);
+    text-align: center;
+}

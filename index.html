@@ -4,18 +4,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link rel="styleSheet" href="styles/style.css">
+        <script src="scripts/javascript.js"></script> 
     </head>
-    <body>
-        <h1>Portfolio Website</h1>
-        <img src="images/selfie.jpg" alt="picture of myself">
+    <body id="page_body">
+        <h1 class="header_style">Portfolio Website</h1>
+        <div>
+        <img id="selfie" src="images/selfie.jpg" alt="picture of myself">
         <p>I enjoy drawing, programming, playing piano, and planning projects with my friends. I work at a grocery store as a cashier.
             During the summer, I work in the deli as well as help my Oma with landscaping the Veteran's Home. I own one cat who wakes me up 
             every morning and begs for canned tuna. I hope that learning programming leads to more job opportunities and creative endeavors.
             Working on assignments already gives me ideas for other cool projects I could do.
         </p>
-        <h2>JavaScript Demonstrations</h2>
-	<a href='shape_calc/shape_calc.html'>Shape Calculator</a>
-        <p>(Work in progress. Will be added soon!)</p>
+        <h2 class="header_style">JavaScript Demonstrations</h2>
+	<a id = "shape_calc" href='shape_calc/shape_calc.html' target = "_blank" rel = "noopener noreferrer">Shape Calculator</a>
+
         
+
+        <h3>Site Settings</h3>
+        <h4 id="current_theme">Current Site Setting: Default</h4>
+        <button class = "button" onclick="default_theme()">Default</button>
+        <button class = "button2" onclick="noir_theme()">Noir</button>
+        <button class = "button3" onclick="light_theme()">Light</button>
+
+        <h3>Copyright free beats to browse my website to:</h3>
+        <audio controls loop>
+            <source src="6. 88 MPH Disco.wav" type="audio/wav">
+        </audio>
+        <p>Song: 6.88 MPH Disco - Harris Heller</p>
+        </div>
     </body>
 </html>

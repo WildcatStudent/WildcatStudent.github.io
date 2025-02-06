@@ -1,0 +1,4 @@
+cd WildcatStudent.github.io		// Navigate into website; use Tab
+git add -A				// Adds stuff
+git commit -m "some message"		// Commits all changes
+git push origin main			// Push changes to server repo
