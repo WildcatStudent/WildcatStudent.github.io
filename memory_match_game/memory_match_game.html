@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <title>Memory Match</title>
+        <style>
+            .tile {
+                font-size: xx-large;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                background-color: gray;
+                text-align: center;
+            }
+
+            td {
+                width: 55px;
+                height: 55px;  
+            }
+        </style>
+    </head>
+    <body>
+<h1>Welcome to Memory Match!</h1>
+<p><button onclick = 'gameReset()'>Reset Game</button></p>
+<div id = 'gameBoard'></div>
+
+<script>
+    let map = [];
+    let tile1 = null, tile2 = null;
+
+    //TODO: Write the project code
+    // function loadMap (rows, cols) 
+    
+    const loadMap = (rows = 4, cols = 4) => {
+    const maxValue = (rows * cols) / 2;
+    let pairs = [];
+
+    const shuffle = (array) => {
+        for (let i = array.length - 1; i > 0; i--){
+            const j = Math.floor(Math.random() * (i+1));
+            let temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    }
+   
+    for (let i = 1; i <= maxValue; i++) {
+        pairs.push(i, i);
+    }
+
+  
+    pairs = shuffle(pairs);
+
+    map = [];
+
+    let index = 0;
+    for (let r = 0; r < rows; r++) {
+        map[r] = [];
+        for (let c = 0; c < cols; c++) {
+            map[r][c] = pairs[index];
+            index++;
+        }
+    }
+};
+
+loadMap();
+console.log(map);
+
+const makeBoard = (rows = 4, cols = 4) => {
+
+}
+
+let output = "table"
+</script>
+    </body>
+</html>
+
