@@ -30,6 +30,54 @@
         <button class = "button2" onclick="noir_theme()">Noir</button>
         <button class = "button3" onclick="light_theme()">Light</button>
 
+        <h3>Validation Form</h3>
+
+        <label for="name">Name:</label>
+            <input
+            id="name"
+            type="text"
+            pattern="[a-zA-Z ]"
+            required>
+        <br><br>
+
+        <label for="phone number">Phone Number:</label>
+            <input
+            id="tel"
+            >
+        <br><br>
+
+        <label for="email">Email:</label>
+			<input 
+			id ="email" 
+			name="useremail"
+			type = "email"
+			placeholder="i.e myname@gmail.com"
+			autocomplete="email"
+			required>
+            <br><br>
+
+        <label for="comment">Comment:</label>
+        <br><br>
+
+        <label for="username">Username:</label>
+        <input 
+			id ="username" 
+			name="user"
+			type="text"
+			autocomplete="username"
+			pattern="[a-zA-Z0-9_]{4-8}"
+			title="Lowercase letters only, 4-8 characters">
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input 
+			id = "password" 
+			name="userpass"
+			type="password">
+        <br><br>
+
+        <button type="submit">Sign Up</button>
+
         <h3>Copyright free beats to browse my website to:</h3>
         <audio controls loop>
             <source src="6. 88 MPH Disco.wav" type="audio/wav">
