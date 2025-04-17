@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+
+</head>
+<body>
+    <h1>Book Collection</h1>
+    <div id ="media-container"></div>   <!--Empty container that will get the generated media elements.-->
+    <h4>Photos of books taken by me.</h4>
+
+    <script>
+
+// JSON fake data array
+const books = [
+{"title": "The Anti-Planner", "author": "Dani Donovan", "price": 15.99, "image": "images/book1.jpg"},
+{"title": "Save The Cat", "author": "Blake Snyder", "price": 7.99, "image": "images/book2.jpg"}, 
+{"title": "The Art of War", "author": "Sun Tzu", "price": 12.99, "image": "images/book3.jpg"},
+{"title": "How to Win Friends and Influence People", "author": "Dale Carnegie", "price": 13.99, "image": "images/book4.jpg"}
+
+]
+
+class Media {
+    #price; //The # should make it private so the price can't be changed outside the class. Wouldn't want other people to change the price.
+
+    constructor(title, author, price, image) {
+        this.title = title;
+        this.author = author;
+        this.setPrice(price);
+        this.image = image;
+    }
+
+    getPrice() {    //Returns the value of the #price attribute.
+        return this.#price;
+    }
+
+    setPrice(newPrice) { //Since we're still in the class, it's able to call it.
+        if (typeof newPrice === "number" && newPrice >= 0) {
+            this.#price = newPrice;
+        } else {
+            console.warn("Invalid price: must be a non-negative number.");
+        }
+    }
+
+    toString() {
+        return `${this.title} by ${this.author} — $${this.#price.toFixed(2)}`;
+    }
+
+    generateHTMLElement() {
+        const container = document.createElement('div');
+        container.style.border = '1px solid #ccc';
+        container.style.padding = '10px';
+        container.style.margin = '10px';
+        container.style.width = '200px';
+        container.style.fontFamily = 'Arial';
+
+        const img = document.createElement('img');
+        img.src = this.image;
+        img.alt = this.title;
+        img.style.width = '100%';
+
+        const title = document.createElement('h3');
+        title.textContent = this.title;
+
+        const author = document.createElement('p');
+        author.textContent = `By ${this.author}`;
+
+        const price = document.createElement('p');
+        price.textContent = `$${this.#price.toFixed(2)}`;
+
+        container.appendChild(img);
+        container.appendChild(title);
+        container.appendChild(author);
+        container.appendChild(price);
+
+        return container;
+    }
+
+
+}
+
+
+
+const mediaItems = books.map(book => 
+    new Media(book.title, book.author, book.price, book.image)
+);
+
+mediaItems.forEach(item => {
+    document.getElementById("media-container").appendChild(item.generateHTMLElement());
+});
+
+    </script>
+</body>
+</html>
